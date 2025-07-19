@@ -1,0 +1,196 @@
+:root {
+    --bg-color: #fdf8f0; /* Creamy paper background */
+    --accent-pink: #f7d6e0; /* Soft pastel pink */
+    --accent-blue: #c0d6e4; /* Dusty pastel blue */
+    --text-color: #5d5c61; /* Soft dark grey */
+    --header-font: 'Dancing Script', cursive;
+    --caption-font: 'Kalam', cursive;
+}
+
+body {
+    font-family: 'Patrick Hand', 'Kalam', cursive;
+    background-color: var(--bg-color); /* This remains as a fallback */
+    background-image: url('path/to/your/paper-texture.png'); /* Add this line */
+    color: var(--text-color);
+    font-family: 'Patrick Hand', sans-serif; /* Suggestion: See Font Improvement below */
+    margin: 0;
+}
+
+/* --- Password Page Styling --- */
+.lockscreen-body {
+    background-image: linear-gradient(to top, #c0d6e4, #f7d6e0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.password-box {
+    background-color: var(--bg-color);
+    padding: 2.5rem 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    border: 1px solid white;
+}
+
+.password-title {
+    font-family: var(--header-font);
+    font-size: 3rem;
+    color: var(--text-color);
+    margin-top: 0;
+}
+
+.password-input {
+    width: 80%;
+    padding: 12px;
+    border: 1px solid var(--accent-blue);
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.password-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 1rem;
+    background-color: var(--accent-pink);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.password-button:hover {
+    background-color: #e6c2cf;
+}
+
+.error-message {
+    color: #d9534f;
+    margin-top: 1rem;
+    visibility: hidden; /* Hidden by default */
+}
+
+/* --- Memories Page Styling --- */
+.main-header {
+    background-color: var(--accent-pink);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    font-family: var(--header-font);
+    font-size: 2.5rem;
+}
+
+/* --- Timeline --- */
+.timeline-container {
+    background-color: var(--accent-blue);
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.timeline-button {
+    background-color: white;
+    border: 2px solid var(--accent-pink);
+    color: var(--text-color);
+    padding: 8px 16px;
+    margin: 5px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.timeline-button:hover, .timeline-button.active {
+    background-color: var(--accent-pink);
+    color: white;
+}
+
+/* --- Scrapbook Grid --- */
+.scrapbook-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.scrapbook-item {
+    background: white;
+    padding: 15px;
+    border-radius: 3px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out;
+    position: relative; 
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.scrapbook-item:nth-child(2n) { transform: rotate(2deg); }
+.scrapbook-item:nth-child(3n) { transform: rotate(-2.5deg); }
+.scrapbook-item:nth-child(4n) { transform: rotate(1.5deg); }
+
+.scrapbook-item:hover {
+    transform: scale(1.05) rotate(0deg) !important;
+    z-index: 10;
+}
+.scrapbook-item a[data-fancybox] {
+    display: block;
+    flex-grow: 1;
+    height: 250px; 
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+/* Washi tape effect */
+.scrapbook-item::before {
+    content: '';
+    position: absolute;
+    top: -12px; /* A little higher */
+    left: 50%;
+    transform: translateX(-50%) rotate(-4deg); /* Center it and rotate */
+    width: 100px; /* Give it a fixed width */
+    height: 30px;
+    background: var(--accent-blue);
+    opacity: 0.7;
+    border-left: 2px dashed rgba(255, 255, 255, 0.7);
+    border-right: 2px dashed rgba(255, 255, 255, 0.7);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2); /* Add a subtle shadow to the tape itself */
+}
+.scrapbook-item.tape-pink::before {
+    background: var(--accent-pink);
+    transform: translateX(-50%) rotate(5deg); /* Rotate the other way */
+    opacity: 0.6;
+}   
+
+.scrapbook-item img,
+.scrapbook-item video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.item-caption {
+    font-family: var(--caption-font);
+    margin-top: 15px; /* A bit more space */
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 8px;
+    flex-shrink: 0;
+}
+
+.item-caption::after {
+    content: '';
+    display: block;
+    width: 60%;
+    margin: 4px auto 0;
+    height: 2px;
+    background-color: var(--accent-pink);
+    opacity: 0.5;
+    border-radius: 2px;
+}
