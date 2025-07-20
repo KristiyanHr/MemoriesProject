@@ -194,3 +194,51 @@ body {
     opacity: 0.5;
     border-radius: 2px;
 }
+.scrapbook-item.is-favorite {
+    border: 3px solid #FFD700; /* Gold color */
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.7), 5px 5px 15px rgba(0, 0, 0, 0.15); /* Glowing effect + original shadow */
+}
+
+/* 2. The favorite toggle button (the pin) */
+.favorite-toggle {
+    position: absolute;
+    top: -5px;
+    right: 5px;
+    z-index: 20; /* Make sure it's on top of everything */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    opacity: 0.6;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.favorite-toggle:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* 3. The pin icon (SVG) styling */
+.favorite-toggle svg {
+    display: block;
+    width: 24px;
+    height: 24px;
+    fill: #a0a0a0; /* Default color: grey */
+    transition: fill 0.3s;
+    filter: drop-shadow(0 1px 1px rgba(0,0,0,0.3)); /* Give the pin a little shadow */
+}
+
+/* 4. The pin icon style WHEN the item is a favorite */
+.scrapbook-item.is-favorite .favorite-toggle svg {
+    fill: #FFC700; /* Active color: bright gold */
+}
+
+/* 5. Style for the empty message when no favorites are found */
+.empty-message {
+    grid-column: 1 / -1; /* Make it span the entire grid */
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: var(--caption-font);
+    padding: 3rem;
+    color: var(--text-color);
+}
