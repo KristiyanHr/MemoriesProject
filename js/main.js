@@ -456,7 +456,8 @@ document.addEventListener('DOMContentLoaded', () => {
             date: '2024-08-10',
             type: 'image',
             url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1752940789/the_Dospat_i_wont_forget_u6lgd8.jpg',
-            caption: 'Това място, този регион, нещо пълно със спомени и хубави моменти. Няма как да го забравя.'
+            caption: 'Това място, този регион, нещо пълно със спомени и хубави моменти. Няма как да го забравя.',
+            favorite: true
         },
         {
             date: '2024-08-10',
