@@ -464,6 +464,432 @@ document.addEventListener('DOMContentLoaded', () => {
             type: 'image',
             url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1752940784/getting_ready_for_fishing_gvn0sv.jpg',
             caption: 'А тук бях развълнуван и готов за дълъг риболовен ден.'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035653/myNade_doehu9.jpg',
+            caption: 'Да, ето така гледаше моята Наденичка!'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035645/littleME_qglmkv.jpg',
+            caption: 'Ето още една стара снимка, Дали пък времето не лети?'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035644/Feeling_cute_fbwpae.jpg',
+            caption: 'Рядко срещано и аз да съм в това число, но тук сме супер красиви.'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035642/insofia_sjsm0s.jpg',
+            caption: 'В София, до рибрският магазин, преди да отидем за риба на баластриерата'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035632/feeling_beautifull_again_bv07tv.jpg',
+            caption: 'Мед ми капе от сърцето, когато ни видя, а от очите....'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035626/bobatea_qy3yrf.jpg',
+            caption: 'Време беше да пробвам и боба чай.'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035580/the_Dospat_i_wont_forget_umzop2.jpg',
+            caption: 'Доспат.... Каквото и да напиша ще е малко'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035567/irini_gacocr.jpg',
+            caption: 'Ейто тук сме в Ирини на хубавата и полезна храна (последен път) :('
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035554/Going_to_another_Spa_ku4nay.jpg',
+            caption: 'Кой ли знае накъде сме се запътили, а?'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035550/getting_ready_for_fishing_rym3bq.jpg',
+            caption: 'Някъде тук се отключи страстта ми към риболова'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035528/black_hmvvpp.jpg',
+            caption: 'Черно с Черно... Любимата ти комбинация.'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035523/best_friends_whgtgp.jpg',
+            caption: 'Някой ме е хванал в момент, който си беше наш с Бобчо'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035773/coldd_hfoyge.jpg',
+            caption: 'Вън е студ, а ние сме си все така двамата'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035671/Pursi_o4zyur.jpg',
+            caption: '2 минути гушки преди да се приберем от Ямна.'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035666/our_first_christmas_xu3pip.jpg',
+            caption: 'Не плачаа... Първата ни коледа заедно.'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035662/Lovely_ski_trip_wx4ro5.jpg',
+            caption: 'Едно красиво моментче.'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035658/Bela_moment_takbpl.jpg',
+            caption: 'Ах белааа, тръгна си толкова бързо.'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035654/another_Aventure_dxjxcu.jpg',
+            caption: 'Нов зимен ден, студено време, оползотворено с любими хора.'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035611/u_photographing_me_psrn57.jpg',
+            caption: 'Цял живот бягам от тези папараци.'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035607/small_shirt_jna3ck.jpg',
+            caption: 'Леле... Ето това е красота.'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035603/my_new_potink_heiaay.jpg',
+            caption: 'Нямаше как да не покажем и новият ми потник на преден план хехе.'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035598/Driver_licence_b0jt7g.jpg',
+            caption: 'Core memory, аз, ти, аудито и истинските ми емоции.'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035594/damnnn_Belchin_hlguov.jpg',
+            caption: 'Леле, Белчин, а сякаш беше вчера, а?'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035589/cuddles_while_studying_qxzh46.jpg',
+            caption: 'Много е важно да легнем върху лаптопа, няма как.'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035718/what_a_moment_x23lrc.jpg',
+            caption: 'Дали пък не ни личи колко сме щастливи?'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035714/wait_for_it_ppidzz.jpg',
+            caption: 'Не изглеждам готов за тази снимка.'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035710/us_again_fhtkhc.jpg',
+            caption: 'Ясно го помня как се почувствах доминиран.'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035706/no_private_space_ncxwjo.jpg',
+            caption: 'Лично простраснво ли? Виждал съм, но няма.'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035701/u_want_some_yqf82y.jpg',
+            caption: 'Винаги бих ти предложил от моето хапване, душа.'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035697/me_and_Bobcho_zj9bla.jpg',
+            caption: 'Я да видим на кой му е добре така, а?'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035693/good_lightning_nu1q3n.jpg',
+            caption: 'Тук... да кажем, че светлината е добра, а?'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035689/cuteeee_gudcgo.jpg',
+            caption: 'Само да можех да осъзная красотата дето ми носиш, дето ми даваш.'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035686/corgicafe_ercjpq.jpg',
+            caption: 'Хихи коргита, големи сладуранковци бяха, реших, че ще гледаме едно заедно.'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035681/core_memory_cg7v8e.jpg',
+            caption: 'Както казах вече, любимо мое нещо, което ти правеше.'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035676/apreciate_those_dzncwk.jpg',
+            caption: 'Може да се кандидатираме за Мис и Мистър Ямна... мисля, че имаме доста голям шанс.'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035616/what_am_i_doing_hgh7ns.jpg',
+            caption: 'За този тип снимки, обяснение нямам, но и не е нужно.'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035767/what_am_i_doing_nkpvgn.jpg',
+            caption: 'Тук тренирам, но от този ъгъл не се подразбира, фотографа е бил добър.'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035762/topcho_everywhere_rbnffz.jpg',
+            caption: 'Нека хапна малко, но нека не забравяме, че комфорта на Принца е по-важен.'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035758/this_was_us_non_stop_wzxt0m.jpg',
+            caption: 'ДА, Наде, много му личи на човек, когато е щастлив, все пак видя как изглеьдам сега.'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035754/the_little_princess_twrmpa.jpg',
+            caption: 'Вто го и още един спомен, една малка принцеса, която вече не е тук.'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035750/Our_room_in_proggress_g95orr.jpg',
+            caption: 'Ето го и първото попълнение за НАШАТА стая, както искаше да я наричаме.'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035745/my_guy_viko_kkytyj.jpg',
+            caption: 'Вико, как можех да знам че преди месец го виждам за последен път?'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035742/how_did_i_have_that_wnfglz.jpg',
+            caption: 'Оставам без думи за теб, трябва ми синонимен речник за думата красота.'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035741/favourite_l7em1q.jpg',
+            caption: 'Как така получих шанс с такова прекрасно създание.'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035732/beautifull_pqy6lj.jpg',
+            caption: 'Тук сме малко на бал, няма как.'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035726/after_Spa_yay8xj.jpg',
+            caption: 'Малко ми се спи, нищо, че цял ден СПАх'
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: '',
+            caption: ''
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: '',
+            caption: ''
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: '',
+            caption: ''
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: '',
+            caption: ''
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: '',
+            caption: ''
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: '',
+            caption: ''
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: '',
+            caption: ''
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: '',
+            caption: ''
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: '',
+            caption: ''
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: '',
+            caption: ''
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: '',
+            caption: ''
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: '',
+            caption: ''
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: '',
+            caption: ''
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: '',
+            caption: ''
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: '',
+            caption: ''
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: '',
+            caption: ''
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: '',
+            caption: ''
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: '',
+            caption: ''
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: '',
+            caption: ''
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: '',
+            caption: ''
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: '',
+            caption: ''
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: '',
+            caption: ''
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: '',
+            caption: ''
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: '',
+            caption: ''
+        },
+        {
+            date: '2024-08-10',
+            type: 'image',
+            url: '',
+            caption: ''
         }
 
     ];
