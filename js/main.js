@@ -744,86 +744,86 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             date: '2024-08-10',
             type: 'image',
-            url: '',
-            caption: ''
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035722/achievement_wfaqq8.jpg',
+            caption: 'Къщата... прогресираме и вече му се вижда края.'
         },
         {
             date: '2024-08-10',
             type: 'image',
-            url: '',
-            caption: ''
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035621/Paradise_s4jedc.jpg',
+            caption: 'Късно вечер, нарамил раничката ти из уличките около парадайс.'
         },
         {
             date: '2024-08-10',
             type: 'image',
-            url: '',
-            caption: ''
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035585/the_strangest_tiramisu_rwupme.jpg',
+            caption: 'Най-интересният ресорант, в който съм бил и най-чаканото тирамису.'
         },
         {
             date: '2024-08-10',
             type: 'image',
-            url: '',
-            caption: ''
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035576/or_nor_qj4ib2.jpg',
+            caption: 'Хоп, откраднал съм ти динята малко тук.'
         },
         {
             date: '2024-08-10',
             type: 'image',
-            url: '',
-            caption: ''
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035572/only_u_look_good_ly89ay.jpg',
+            caption: 'Виж се просто, ПРИНЦЕСО. Изпъкваш!'
         },
         {
             date: '2024-08-10',
             type: 'image',
-            url: '',
-            caption: ''
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035564/look_at_this_ooq31x.jpg',
+            caption: 'Ами да, такива сме си, сладури.'
         },
         {
             date: '2024-08-10',
             type: 'image',
-            url: '',
-            caption: ''
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035559/im_dead_avgxnm.jpg',
+            caption: 'Туууук да кажем, че съм лееееко припаднал за момент.'
         },
         {
             date: '2024-08-10',
             type: 'image',
-            url: '',
-            caption: ''
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035546/elevator_bmrqnq.jpg',
+            caption: 'Много свежа рокличка, loving it.'
         },
         {
             date: '2024-08-10',
             type: 'image',
-            url: '',
-            caption: ''
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035541/dad_s_pose_h4dovk.jpg',
+            caption: 'Тук тате е заел уникална поза.' 
         },
         {
             date: '2024-08-10',
             type: 'image',
-            url: '',
-            caption: ''
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035533/2_years_ago_ckjodw.jpg',
+            caption: 'Минаха над 2 години от тогава, не е реално нали?'
         },
         {
             date: '2024-08-10',
             type: 'image',
-            url: '',
-            caption: ''
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035520/the_chill_time_we_had_aytaqv.jpg',
+            caption: 'Почивахме си и се зареждахме един друг за предстоящите дни.'
         },
         {
             date: '2024-08-10',
             type: 'image',
-            url: '',
-            caption: ''
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035514/i_look_good_here_qogeqe.jpg',
+            caption: 'Окей, добре, признавам тук изглеждам добре, но може би е просто светлината'
         },
         {
             date: '2024-08-10',
             type: 'image',
-            url: '',
-            caption: ''
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035513/photo_bomb_a9vhpx.jpg',
+            caption: 'Хайде още една снимчица от приключение и една фото бомба.'
         },
         {
             date: '2024-08-10',
             type: 'image',
-            url: '',
-            caption: ''
+            url: 'https://res.cloudinary.com/ddkooxecn/image/upload/v1753035537/all_love_you_t7vxwy.jpg',
+            caption: 'ДА, всички те те обичаха, обичат и ще продължават да те обичат no matter what happens.'
         },
         {
             date: '2024-08-10',
