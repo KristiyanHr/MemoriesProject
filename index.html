@@ -4,21 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unlock a Story</title>
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Kalam&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Kalam&family=Patrick+Hand&display=swap" rel="stylesheet">
 </head>
 <body class="lockscreen-body">
 
-    <div class="password-box">
-        <h1 class="password-title">The Memory Chest</h1>
-        <p>This story is locked. Please enter the password.</p>
-        <form id="password-form">
-            <input type="password" id="password-input" class="password-input" placeholder="Password...">
-            <button type="submit" class="password-button">Unlock</button>
-        </form>
-        <p id="error-message" class="error-message">The key doesn't fit. Try again.</p>
-    </div>
+    <video autoplay muted loop id="background-video">
+        <source 
+        src="https://res.cloudinary.com/ddkooxecn/video/upload/vc_auto/v1753275016/Edited_background_video_s1rm3n.mp4"
+        type="video/mp4"> The browser is not supporting the video.
+    </video>
+
+
+    <div class="video-overlay"></div>
+
+     <section id="landing-view">
+        <div class="scroll-prompt">
+            <span>Здравей, Наде!</span>
+            <span>Добре дошла в моят нов проект</span>
+            <div class="arrow"></div>
+        </div>
+    </section>
+
+
+     <section id="password-view">
+        <div class="password-box">
+            <h1 class="password-title">The Memory Chest</h1>
+            <p>This story is locked. Please enter the password.</p>
+            <form id="password-form">
+                <input type="password" id="password-input" class="password-input" placeholder="Password...">
+                <button type="submit" class="password-button">Unlock</button>
+            </form>
+            <p id="error-message" class="error-message">The key doesn't fit. Try again.</p>
+        </div>
+    </section>
 
     <script src="js/main.js"></script>
 </body>

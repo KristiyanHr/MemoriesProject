@@ -9,30 +9,103 @@
 
 body {
     font-family: 'Patrick Hand', 'Kalam', cursive;
-    background-color: var(--bg-color); /* This remains as a fallback */
+    background-color: var(--bg-color);
     background-image: url('path/to/your/paper-texture.png'); /* Add this line */
     color: var(--text-color);
     font-family: 'Patrick Hand', sans-serif; /* Suggestion: See Font Improvement below */
     margin: 0;
 }
 
-/* --- Password Page Styling --- */
-.lockscreen-body {
-    background-image: linear-gradient(to top, #c0d6e4, #f7d6e0);
+#background-video{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    filter: brightness(0.9);
+    transform: scale(1.1);
+}
+
+.video-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: radial-gradient(ellipse at center,
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,0.4) 100% ),
+    linear-gradient(to top,
+    hsla(202,28%,76%,0.2),
+    hsla(344,56%,92%,0.2)
+     );
+    
+}
+
+/*SEction 2 -> Pass view*/
+#password-view{
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgba(253, 248, 240, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+#landing-view{
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 50px;
+}
+
+.scroll-prompt{
+    text-align: center;
+    color: wheat;
+    font-family: var(--caption-font);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.scroll-prompt .arrow{
+    width: 20px;
+    height: 20px;
+    border: 3px solid wheat;
+    border-top: none;
+    border-left: none;
+    margin: 10px auto 0;
+    transform: rotate(45deg);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce{
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) rotate(45deg);
+    }
+    40% {
+        transform: translateY(-15px) rotate(45deg);
+    }
+    60% {
+        transform: translateY(-8px) rotate(45deg);
+    }
+}
+
+/* --- Password Page Styling --- */
+.lockscreen-body {
+    background-color:var(--bg-color);
 }
 
 .password-box {
-    background-color: var(--bg-color);
+    background-color: var(--bg-color); 
     padding: 2.5rem 3rem;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     text-align: center;
     max-width: 400px;
-    border: 1px solid white;
+    border: 1px solid wheat;
 }
 
 .password-title {
@@ -48,6 +121,13 @@ body {
     border: 1px solid var(--accent-blue);
     border-radius: 8px;
     margin-top: 1rem;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.1em;
+}
+
+.password-input:focus{
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(192, 214, 228, 0.6);
 }
 
 .password-button {
@@ -60,7 +140,9 @@ body {
     border-radius: 8px;
     color: white;
     font-weight: bold;
-    font-size: 1rem;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -72,7 +154,7 @@ body {
 .error-message {
     color: #d9534f;
     margin-top: 1rem;
-    visibility: hidden; /* Hidden by default */
+    visibility: hidden;
 }
 
 /* --- Memories Page Styling --- */
@@ -140,6 +222,7 @@ body {
 }
 .scrapbook-item a[data-fancybox] {
     display: block;
+    /* flex-grow: .5; */
     aspect-ratio: 16/9;
     border-radius: 2px;
     overflow: hidden;
