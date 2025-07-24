@@ -16,6 +16,8 @@ body {
     margin: 0;
 }
 
+/*Section 1*/
+
 #background-video{
     position: fixed;
     top: 0;
@@ -70,6 +72,13 @@ body {
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
+.scroll-prompt span{
+    display: inline-block;
+    font-size: 1.5rem;
+    animation: fadeInAndUp 1.5s ease-out 0.5s;
+    animation-fill-mode: backwards;
+}
+
 .scroll-prompt .arrow{
     width: 20px;
     height: 20px;
@@ -91,6 +100,40 @@ body {
     60% {
         transform: translateY(-8px) rotate(45deg);
     }
+}
+/*Noise effect*/
+
+@keyframes jitter {
+    0%   { transform: translate(0, 0); }
+    25%  { transform: translate(-1px, 1px); }
+    50%  { transform: translate(1px, -1px); }
+    75%  { transform: translate(1px, 1px); }
+    100% { transform: translate(0, 0); }
+}
+
+@keyframes fadeInAndUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.vintage-flicker-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/noisy-background.jpg);
+    mix-blend-mode: multiply;
+    z-index: 100;
+    pointer-events: none;
+    opacity: 0.2;
+    animation: jitter 0.3s infinite
 }
 
 /* --- Password Page Styling --- */
