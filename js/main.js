@@ -152,4 +152,73 @@ document.addEventListener('DOMContentLoaded', () => {
 
         filterAndRender('All');
     }
+
+const quotes = [
+    "You are the balance to my world, my love.",
+    "Every moment with you is my favorite.",
+    "I'm so lucky you're my person.",
+    "Just a reminder that I love you more than words can say.",
+    "Thinking of our first date always makes me smile.",
+    "You make even the most ordinary days extraordinary.",
+    "My favorite place in the world is right next to you."
+];
+
+// Find all the elements we need
+const quoteButton = document.getElementById('new-quote-btn');
+const quoteDisplay = document.getElementById('quote-display');
+const jarLid = document.querySelector('.jar-lid');
+
+// Check if all elements were found before running any code
+if (quoteButton && quoteDisplay && jarLid) {
+
+    const quoteText = quoteDisplay.querySelector('p');
+    let lidHasOpened = false; // The memory for our one-time animation
+
+    quoteButton.addEventListener('click', () => {
+
+        if (!lidHasOpened) {
+            // This code runs ONLY ONCE on the first click
+            lidHasOpened = true; // Set the memory immediately to prevent bugs
+
+            // 1. Add the opening animation class
+            jarLid.classList.add('lid-is-opening');
+
+            // 2. Listen for the animation to end
+            jarLid.addEventListener('animationend', function handleOpen(e) {
+                // 3. IMPORTANT: Make sure it's the correct animation
+                if (e.animationName === 'open-lid-animation') {
+                    // 4. Clean up: remove the animation class and add the permanent state class
+                    jarLid.classList.remove('lid-is-opening');
+                    jarLid.classList.add('lid-is-open');
+                    
+                    // 5. Remove this listener so it doesn't fire again
+                    jarLid.removeEventListener('animationend', handleOpen);
+                }
+            });
+        } else {
+            // This code runs on every click AFTER the first
+            
+            // 1. Add the jiggling animation class
+            jarLid.classList.add('lid-is-jiggling');
+
+            // 2. Listen for the jiggle to end
+            jarLid.addEventListener('animationend', function handleJiggle(e) {
+                if (e.animationName === 'jiggle-lid-animation') {
+                    // 3. Clean up by removing the animation class.
+                    // The .lid-is-open class remains, holding it in place.
+                    jarLid.classList.remove('lid-is-jiggling');
+                    jarLid.removeEventListener('animationend', handleJiggle);
+                }
+            });
+        }
+
+        // The paper animation logic remains unchanged and works perfectly
+        quoteDisplay.classList.remove('show');
+        setTimeout(() => {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            quoteText.textContent = quotes[randomIndex];
+            quoteDisplay.classList.add('show');
+        }, 200);
+    });
+}
 });
