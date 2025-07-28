@@ -33,26 +33,30 @@
 </main>
 
 <section id="jar-view">
-    <h2 class="section-title">Буркан пълен с цитати</h2>
+  <h2 class="section-title">Буркан пълен с тайни и поводи за размисъл</h2>
 
-    <div class="subtitle-box">
-        <p class="section-subtitle">Всяко твое натискане на бутона ще вади от буркана различен цитат.</p>
+  <div class="subtitle-box">
+    <p class="section-subtitle">Всяко твое натискане на бутона ще вади от буркана по някой цитат или мисъл, която ми се струва релевантна за нас.</p>
+  </div>
+
+  <div class="jar-container">
+    <!-- The paper that will show the quote -->
+    <div class="quote-paper" id="quote-display">
+      <p class="quote-text"></p>
+      <p class="quote-author"></p>
     </div>
 
-    <div class="jar-container">
-        <!-- The paper that will show the quote -->
-        <div class="quote-paper" id="quote-display">
-            <p></p>
-        </div>
-        
-        <!-- The CSS-styled Jar -->
-        <div class="jar-body">
-            <div class="jar-reflection"></div>
-        </div>
-        <div class="jar-lid"></div>
-    </div>
+    <div class="jar-bandage-1"></div>
+    <div class="jar-bandage-2"></div>
 
-    <button id="new-quote-btn">Натисни тук за друг цитат</button>
+    <!-- The CSS-styled Jar -->
+    <div class="jar-body">
+      <div class="jar-reflection"></div>
+    </div>
+    <div class="jar-lid"></div>
+  </div>
+
+  <button id="new-quote-btn">Натисни тук за друг цитат</button>
 </section>
 
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script> 

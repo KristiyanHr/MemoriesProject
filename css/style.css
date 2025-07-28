@@ -446,11 +446,11 @@ body {
     margin: 0;
 }
 
-.jar-container{
-    position: relative;
+.jar-container {
+    position: relative; /* This is better for positioning child elements */
     width: 250px;
     height: 300px;
-    margin: 0 auto;
+    margin: 2rem auto; /* Adjusted margin */
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -483,24 +483,19 @@ body {
 
 .jar-lid {
     position: absolute;
-    /* This moves the lid down to sit ON TOP of the jar body */
-    top: 0; 
+    top: 0;
     width: 185px;
     height: 30px;
-    z-index: 5; /* Crucial: ensures the lid is on top */
-
-    /* The 3D styling remains the same */
+    z-index: 5; /* This is correct, stays on top of the jar body */
     background: linear-gradient(to bottom, #faddf1, var(--accent-pink));
     border: 2px solid #e6c2cf;
     border-top-color: #fceef3;
     border-radius: 12px 12px 8px 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    
-    /* Make the lid's transform originate from the center */
     transform-origin: center;
 }
 
-.quote-paper{
+.quote-paper {
     position: absolute;
     bottom: 50px;
     width: 80%;
@@ -510,7 +505,9 @@ body {
     background-image: url('https://res.cloudinary.com/ddkooxecn/image/upload/v1753378329/41740_c6phmn.jpg');
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     border-radius: 5px;
-    z-index: -1;
+    
+    /* FIX: It starts behind the lid (4) but IN FRONT of the jar body (1) */
+    z-index: 4; 
 
     opacity: 0;
     transform: translateY(50px);
@@ -519,8 +516,10 @@ body {
 
 .quote-paper.show {
     opacity: 1;
-    transform: translateY(-80px) rotate(2deg); /* Slides up from the jar */
-    z-index: 1; /* Comes in front of the jar */
+    transform: translateY(-100px) rotate(2deg); /* Adjust vertical position */
+
+    /* FIX: When shown, it must be on top of everything, including the lid */
+    z-index: 10; 
 }
 
 .quote-paper p{
@@ -551,6 +550,68 @@ body {
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
+.quote-text {
+    font-family: var(--caption-font);
+    font-size: 1.3rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.quote-author {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.1rem;
+    text-align: right;
+    color: #555;
+    opacity: 0.8;
+}
+
+/*Bandage*/
+.jar-bandage-1,
+.jar-bandage-2 {
+    position: absolute;
+    width: 200px;
+    height: 40px;
+    left: 50%;
+    transform-origin: center center;
+
+    background-image:
+        url('https://www.transparenttextures.com/patterns/fabric-of-squares.png'), /* Texture is top layer */
+        linear-gradient(135deg, #aa9475, #fce0e8); 
+    
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+
+    border-radius: 70px; 
+}
+
+.jar-bandage-1 {
+    top: 110px;
+    transform: translateX(-50%) rotate(-22deg) skewX(-10deg);
+}
+
+.jar-bandage-2 {
+    top: 170px;
+    transform: translateX(-50%) rotate(25deg) skewX(10deg);
+}
+
+.jar-bandage-1::after,
+.jar-bandage-2::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    box-shadow: inset 3px 3px 6px rgba(0,0,0,0.15),
+                inset -3px -3px 6px rgba(0,0,0,0.15);
+    
+    border-radius: 40px; 
+}
+
+/*Interactivity*/
+
 .lid-is-open{
     transform: rotate(15deg) translateY(-30px) translateX(90px);
 }
@@ -560,15 +621,16 @@ body {
 }
 
 .lid-is-jiggling {
-    animation: jiggle-lid-animation 0.4s ease-in-out;
+    animation: jiggle-animation 0.5s ease-in-out;
 }
 
-@keyframes jiggle {
-  0% { transform: rotate(0deg); }
-  25% { transform: rotate(-2deg); }
-  50% { transform: rotate(2deg); }
-  75% { transform: rotate(-1deg); }
-  100% { transform: rotate(0deg); }
+@keyframes jiggle-animation {
+    0%, 100% {
+        transform: rotate(15deg) translateY(-30px) translateX(90px);
+    }
+    50% {
+        transform: rotate(18deg) translateY(-35px) translateX(90px);
+    }
 }
 
 @keyframes open-lid-animation {
@@ -581,15 +643,5 @@ body {
     }
     100% {
         transform: rotate(15deg) translateY(-30px) translateX(90px);
-    }
-}
-
-/* Animation for ALL OTHER clicks */
-@keyframes jiggle-lid-animation {
-    0%, 100% {
-        transform-origin: center; 
-    }
-    50% {
-        transform: rotate(10deg) translateY(-35px) translateX(90px);
     }
 }
