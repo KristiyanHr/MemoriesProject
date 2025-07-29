@@ -1,22 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const yourPassword = "nostalgia";
-
-  const passwordForm = document.getElementById("password-form");
-  if (passwordForm) {
-    passwordForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const passwordInput = document.getElementById("password-input");
-      const errorMessage = document.getElementById("error-message");
-
-      if (passwordInput.value === yourPassword) {
-        window.location.href = "memories.html";
-      } else {
-        errorMessage.style.visibility = "visible";
-        passwordInput.focus();
-      }
+  setTimeout(() => {
+    Fancybox.bind("[data-fancybox]", {
+      placeFocusBack: false,
+      trapFocus: false,
+      autoFocus: false,    
     });
-  }
-
+  }, 100);
   // --- MEMORIES PAGE LOGIC ---
   const scrapbookContainer = document.getElementById("scrapbook-container");
   if (scrapbookContainer) {
@@ -40,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setupTimeline(sortedMemories);
     renderMemories(sortedMemories);
 
-    Fancybox.bind("[data-fancybox]", {});
+    
 
     let currentFilter = "All";
     let currentlyDisplayedMemories = [];
@@ -173,79 +162,125 @@ document.addEventListener("DOMContentLoaded", () => {
     filterAndRender("All");
   }
 
-    const quoteButton = document.getElementById("new-quote-btn");
-    const quotePaper = document.getElementById("quote-display");
-    const quoteTextEl = quotePaper.querySelector(".quote-text");
-    const quoteAuthorEl = quotePaper.querySelector(".quote-author");
-    const jarLid = document.querySelector(".jar-lid");
+  const quoteButton = document.getElementById("new-quote-btn");
+  const quotePaper = document.getElementById("quote-display");
+  const quoteTextEl = quotePaper.querySelector(".quote-text");
+  const quoteAuthorEl = quotePaper.querySelector(".quote-author");
+  const jarLid = document.querySelector(".jar-lid");
 
-    // --- STATE MANAGEMENT ---
-    let quotes = [];
-    let isLidOpen = false; // The crucial flag to track the lid's state
+  // --- STATE MANAGEMENT ---
+  let quotes = [];
+  let isLidOpen = false; // The crucial flag to track the lid's state
 
-    // --- FUNCTIONS ---
+  // --- FUNCTIONS ---
 
-    function loadQuotes() {
-        fetch("./quotes.json")
-            .then(res => res.ok ? res.json() : Promise.reject("Failed to load quotes"))
-            .then(data => { quotes = data; })
-            .catch(err => {
-                console.error(err);
-                quoteTextEl.textContent = "Could not load quotes.";
-            });
+  function loadQuotes() {
+    fetch("./quotes.json")
+      .then((res) =>
+        res.ok ? res.json() : Promise.reject("Failed to load quotes")
+      )
+      .then((data) => {
+        quotes = data;
+      })
+      .catch((err) => {
+        console.error(err);
+        quoteTextEl.textContent = "Could not load quotes.";
+      });
+  }
+
+  function getRandomQuote() {
+    if (quotes.length === 0) {
+      return { text: "No quotes loaded yet...", author: "System" };
     }
+    return quotes[Math.floor(Math.random() * quotes.length)];
+  }
 
-    function getRandomQuote() {
-        if (quotes.length === 0) {
-            return { text: "No quotes loaded yet...", author: "System" };
-        }
-        return quotes[Math.floor(Math.random() * quotes.length)];
-    }
+  // --- THE MAIN EVENT LISTENER ---
 
-    // --- THE MAIN EVENT LISTENER ---
+  if (quoteButton && quotePaper && jarLid) {
+    loadQuotes();
 
-    if (quoteButton && quotePaper && jarLid) {
-        
-        loadQuotes();
+    quoteButton.addEventListener("click", () => {
+      // -- ANIMATION LOGIC --
+      if (!isLidOpen) {
+        // FIRST CLICK: Open the lid
+        isLidOpen = true; // Set the flag so this only runs once
+        jarLid.classList.add("lid-is-opening"); // Start the opening animation
 
-        quoteButton.addEventListener("click", () => {
-            // -- ANIMATION LOGIC --
-            if (!isLidOpen) {
-                // FIRST CLICK: Open the lid
-                isLidOpen = true; // Set the flag so this only runs once
-                jarLid.classList.add("lid-is-opening"); // Start the opening animation
-
-                // Listen for the animation to finish
-                jarLid.addEventListener('animationend', function handleOpen(event) {
-                    if (event.animationName === 'open-lid-animation') {
-                        jarLid.classList.add("lid-is-open"); // Set the final open state
-                        jarLid.classList.remove("lid-is-opening"); // Clean up the animation class
-                        jarLid.removeEventListener('animationend', handleOpen); // IMPORTANT: remove listener
-                    }
-                });
-
-            } else {
-                // SUBSEQUENT CLICKS: Jiggle the lid
-                jarLid.classList.add("lid-is-jiggling"); // Play the jiggle animation
-
-                // Listen for the jiggle to finish
-                jarLid.addEventListener('animationend', function handleJiggle(event) {
-                    if (event.animationName === 'jiggle-animation') {
-                        jarLid.classList.remove("lid-is-jiggling"); // Clean up so it can play again
-                        jarLid.removeEventListener('animationend', handleJiggle); // IMPORTANT: remove listener
-                    }
-                });
-            }
-
-            // -- QUOTE DISPLAY LOGIC (This remains the same) --
-            quotePaper.classList.remove("show");
-
-            setTimeout(() => {
-                const newQuote = getRandomQuote();
-                quoteTextEl.textContent = `"${newQuote.text}"`;
-                quoteAuthorEl.textContent = `- ${newQuote.author}`;
-                quotePaper.classList.add("show");
-            }, 400);
+        // Listen for the animation to finish
+        jarLid.addEventListener("animationend", function handleOpen(event) {
+          if (event.animationName === "open-lid-animation") {
+            jarLid.classList.add("lid-is-open"); // Set the final open state
+            jarLid.classList.remove("lid-is-opening"); // Clean up the animation class
+            jarLid.removeEventListener("animationend", handleOpen); // IMPORTANT: remove listener
+          }
         });
+      } else {
+        // SUBSEQUENT CLICKS: Jiggle the lid
+        jarLid.classList.add("lid-is-jiggling"); // Play the jiggle animation
+
+        // Listen for the jiggle to finish
+        jarLid.addEventListener("animationend", function handleJiggle(event) {
+          if (event.animationName === "jiggle-animation") {
+            jarLid.classList.remove("lid-is-jiggling"); // Clean up so it can play again
+            jarLid.removeEventListener("animationend", handleJiggle); // IMPORTANT: remove listener
+          }
+        });
+      }
+
+      // -- QUOTE DISPLAY LOGIC (This remains the same) --
+      quotePaper.classList.remove("show");
+
+      setTimeout(() => {
+        const newQuote = getRandomQuote();
+        quoteTextEl.textContent = `"${newQuote.text}"`;
+        quoteAuthorEl.textContent = `- ${newQuote.author}`;
+        quotePaper.classList.add("show");
+      }, 400);
+    });
+  }
+
+  // --- 3. OUTRO STARS LOGIC ---
+  const starsContainer = document.getElementById("stars-container");
+  if (starsContainer) {
+    console.log("Found stars container, creating stars..."); // A check to see if it runs
+    const numberOfStars = 100;
+
+    for (let i = 0; i < numberOfStars; i++) {
+      const star = document.createElement("div");
+      star.className = "star";
+
+      const size = Math.random() * 2 + 1;
+      star.style.width = `${size}px`;
+      star.style.height = `${size}px`;
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.animationDelay = `${Math.random() * 5}s`;
+      star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+
+      starsContainer.appendChild(star);
     }
+  }
+
+  /*Outro section*/
+  const fadeElements = document.querySelectorAll(".fade-in-text");
+
+  const observerOptions = {
+    root: null, // observes intersections relative to the viewport
+    rootMargin: "0px",
+    threshold: 0.4, // Trigger when 40% of the element is visible
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        // Optional: stop observing the element once it's visible
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Start observing each of the elements
+  fadeElements.forEach((el) => observer.observe(el));
 });
