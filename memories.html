@@ -6,8 +6,8 @@
 <title>Our Scrapbook</title>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" /> 
-<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 <link rel="stylesheet" href="css/style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,62 +55,29 @@
   </div>
 
   <button id="new-quote-btn">Натисни тук за друг цитат</button>
-
-<section id="stairway-to-the-stars">
-
-    <!-- The stars background is now a separate, sticky element -->
+  
+  
+  <section id="constellation-section">
     <div class="starry-background">
         <div id="stars-container"></div>
     </div>
 
-    <!-- This container will hold the scrolling content -->
-    <div class="stairway-content">
+    <!-- This empty div creates the long, clear-sky scroll -->
+    <div class="scroll-spacer"></div>
 
-        <!-- Stop 1: The beginning of the journey -->
-        <div class="scroll-stop">
-            <p class="fade-in-text">The journey isn't over yet...</p>
+    <div class="constellation-wrapper">
+        <div class="constellation-title-container">
+            <h2 class="section-title">Our Constellation</h2>
+            <p class="section-subtitle">The stars have stories to tell. Click on them.</p>
+        </div>
+        
+        <div id="constellation-holder">
+            <!-- SVG will be loaded here by JavaScript -->
         </div>
 
-        <!-- Stop 2: A personal thought -->
-        <div class="scroll-stop">
-            <p class="fade-in-text">There are a few more things I wanted to tell you.</p>
+        <div class="final-message-container">
+            <!-- ... your final message ... -->
         </div>
-
-        <!-- Stop 3: The first video star -->
-        <div class="scroll-stop">
-            <p class="fade-in-text">Click on the star to hear my thoughts.</p>
-            <div class="memory-star" data-fancybox data-src="path/to/your/talking-video-1.mp4">
-                <span>Play Video 1</span>
-            </div>
-        </div>
-
-        <!-- Stop 4: Another personal thought -->
-        <div class="scroll-stop">
-            <p class="fade-in-text">Every day with you feels like a new adventure.</p>
-        </div>
-
-        <!-- Stop 5: The second video star -->
-        <div class="scroll-stop">
-            <p class="fade-in-text">And here's another memory I hold dear.</p>
-            <div class="memory-star" data-fancybox data-src="path/to/your/talking-video-2.mp4">
-                <span>Play Video 2</span>
-            </div>
-        </div>
-
-        <!-- The Final Destination -->
-        <div id="final-destination">
-            <div class="outro-content">
-                <h2 class="section-title">...and to all our tomorrows.</h2>
-                <div class="outro-video-container">
-                    <video controls playsinline src="path/to/your/final-outro-video.mp4"></video>
-                </div>
-                <p class="final-message">
-                    Thank you for walking down this path with me. Every single moment is a treasure. Here's to all the adventures still to come.
-                </p>
-                <p class="final-signature">I love you.</p>
-            </div>
-        </div>
-
     </div>
 </section>
 

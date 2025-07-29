@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     Fancybox.bind("[data-fancybox]", {
       placeFocusBack: false,
       trapFocus: false,
-      autoFocus: false,    
+      autoFocus: false,
     });
   }, 100);
   // --- MEMORIES PAGE LOGIC ---
@@ -28,8 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
     createScrollingBanner(sortedMemories);
     setupTimeline(sortedMemories);
     renderMemories(sortedMemories);
-
-    
 
     let currentFilter = "All";
     let currentlyDisplayedMemories = [];
@@ -172,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let quotes = [];
   let isLidOpen = false; // The crucial flag to track the lid's state
 
-  // --- FUNCTIONS ---
+  // --- FUNCTIONS --- Quotes
 
   function loadQuotes() {
     fetch("./quotes.json")
@@ -263,24 +261,89 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /*Outro section*/
-  const fadeElements = document.querySelectorAll(".fade-in-text");
+  const constellationHolder = document.getElementById("constellation-holder");
+  if (constellationHolder) {
+    // 1. Load your SVG file
+    fetch("libra-constellation.svg")
+      .then((response) => response.text())
+      .then((svgData) => {
+        constellationHolder.innerHTML = svgData;
 
-  const observerOptions = {
-    root: null, // observes intersections relative to the viewport
-    rootMargin: "0px",
-    threshold: 0.4, // Trigger when 40% of the element is visible
-  };
+        // 2. Find all the star elements inside the newly loaded SVG
+        const stars = constellationHolder.querySelectorAll(
+          ".constellation-star"
+        );
 
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-        // Optional: stop observing the element once it's visible
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
+        stars.forEach((star) => {
+          // 3. Add a click listener to EACH star
+          star.addEventListener("click", () => {
+            const videoSrc = star.getAttribute("data-video-src");
 
-  // Start observing each of the elements
-  fadeElements.forEach((el) => observer.observe(el));
+            if (videoSrc) {
+              console.log("Star clicked! Opening video:", videoSrc);
+
+              // 4. THE FIX: Create a new GLightbox instance programmatically
+              
+              const lightbox = GLightbox({
+                autoplayVideos: true,
+              });
+
+              lightbox.setElements([
+                {
+                  href: videoSrc,
+                  type: "video",
+                  source: "local",
+                },
+              ]);
+
+              lightbox.open();
+            }
+          });
+        });
+      })
+      .catch((err) => {
+        console.error("Failed to load SVG:", err);
+        constellationHolder.innerHTML =
+          "<p style='color:red;'>Could not load the constellation.</p>";
+      });
+  }
+  const titleContainer = document.querySelector(
+    ".constellation-title-container"
+  );
+
+  if (titleContainer) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target); // Stop watching once it's visible
+          }
+        });
+      },
+      { threshold: 0.5 }
+    ); 
+
+    observer.observe(titleContainer);
+  }
+
+if (starsContainer) {
+    const numberOfStars = 150; // You can increase this for a denser starfield
+
+    for (let i = 0; i < numberOfStars; i++) {
+        const star = document.createElement("div");
+        star.className = "star";
+
+        // Random size, position, and animation properties for a natural look
+        const size = Math.random() * 2 + 1;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.top = `${Math.random() * 100}%`;
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.animationDelay = `${Math.random() * 5}s`;
+        star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+
+        starsContainer.appendChild(star);
+    }
+}
 });

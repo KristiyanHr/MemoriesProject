@@ -421,6 +421,7 @@ body {
     background-color:wheat;
     background-image: linear-gradient(to bottom,  #f7e9e3, #fdf8f0);
     text-align: center;
+    padding-bottom: 10rem;
 }
 
 .section-title{
@@ -647,13 +648,100 @@ body {
 }
 /*Outro section*/
 
-.outro-content {
-    /* Set a max-width to keep the text readable on large screens */
-    max-width: 650px; 
-    z-index: 2; /* Sits on top of the stars */
+/* --- FINAL, CLEANED-UP CONSTELLATION STYLES --- */
+
+/* This is your empty div for creating the long scroll */
+.stairway-entry {
+    height: 50vh; 
 }
 
-/* The twinkling animation */
+/* The wrapper for all the content */
+.constellation-wrapper {
+    position: relative;
+    z-index: 2; /* Ensures it sits on top of the .starry-background */
+    text-align: center;
+    color: white;
+}
+
+/* The container for the text that will animate */
+.constellation-title-container {
+    opacity: 0;
+    transform: translateX(-100px); /* Start off-screen to the left */
+    transition: opacity 1.2s ease-out, transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* The class added by JavaScript to trigger the animation */
+.constellation-title-container.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* The holder for your SVG */
+#constellation-holder {
+    max-width: 500px;
+    margin: 2rem auto 4rem auto;
+}
+
+/* The SVG element itself */
+.constellation-svg {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+}
+
+/* The connecting lines in the SVG */
+.constellation-line {
+    stroke: rgba(255, 229, 180, 0.4); /* Faint gold color */
+    stroke-width: 2;
+}
+
+/* The one, true style for your clickable stars in the SVG */
+.constellation-star {
+    fill: rgba(255, 229, 180, 0.9); /* Brighter gold color */
+    stroke: white;
+    stroke-width: 1;
+    transition: fill 0.3s ease;
+    cursor: pointer;
+    
+    /* The glowing animation */
+    animation: star-pulse 4s infinite ease-in-out;
+}
+
+.constellation-star:hover {
+    fill: white; /* Brightens to pure white on hover */
+    animation-play-state: paused;
+}
+
+/* The keyframes for the star's glowing pulse */
+@keyframes star-pulse {
+    0%, 100% { filter: drop-shadow(0 0 4px white); }
+    50% { filter: drop-shadow(0 0 12px white); }
+}
+
+/* --- THE STARRY BACKGROUND STYLES --- */
+
+.starry-background {
+    position: absolute; /* This makes it a background layer */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Sits behind the main content */
+    overflow: hidden; /* Ensures stars don't spill out */
+}
+
+/* This is the individual star element we create with JavaScript */
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    
+    /* The twinkling animation */
+    animation: twinkle 5s infinite;
+}
+
+/* The keyframes for the twinkling effect */
 @keyframes twinkle {
     0%, 100% {
         opacity: 0.5;
@@ -663,112 +751,4 @@ body {
         opacity: 1;
         transform: scale(1);
     }
-}
-#stairway-to-the-stars {
-    position: relative;
-    min-height: 300vh; 
-    background-color: #1a222e; 
-    width: 100vw;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-/* This makes the starry background stick to the screen as you scroll */
-.starry-background {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-}
-
-#stars-container {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-}
-
-.star { /* This style is from before and is still perfect */
-    position: absolute; background-color: white; border-radius: 50%;
-    box-shadow: 0 0 8px white; animation: twinkle 5s infinite;
-}
-
-/* The container for the content that scrolls OVER the background */
-.stairway-content {
-    position: relative;
-    z-index: 2;
-    padding-top: 50vh; /* Start the content in the middle of the screen */
-}
-
-/* Each "stop" on the journey */
-.scroll-stop {
-    min-height: 80vh; /* Space out the content nicely */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-/* The text that will fade in */
-.fade-in-text {
-    font-family: var(--caption-font);
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 1.8rem;
-    max-width: 600px;
-    padding: 0 2rem;
-    line-height: 1.5;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-    
-    /* Start hidden and slightly moved down */
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
-}
-
-/* This class will be added by JavaScript to trigger the animation */
-.fade-in-text.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* The glowing star button for the videos */
-.memory-star {
-    margin-top: 2rem;
-    width: 80px;
-    height: 80px;
-    background: white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0 0 15px white, 0 0 30px #f7d6e0, 0 0 45px #c0d6e4;
-    animation: pulse 2.5s infinite;
-    transition: transform 0.3s;
-}
-
-.memory-star:hover {
-    transform: scale(1.1);
-}
-
-.memory-star span {
-    color: #333;
-    font-family: 'Patrick Hand', cursive;
-    font-weight: bold;
-}
-
-/* The pulsing animation for the star */
-@keyframes pulse {
-    0% { box-shadow: 0 0 15px white, 0 0 30px #f7d6e0, 0 0 45px #c0d6e4; }
-    50% { box-shadow: 0 0 25px white, 0 0 45px #f7d6e0, 0 0 65px #c0d6e4; }
-    100% { box-shadow: 0 0 15px white, 0 0 30px #f7d6e0, 0 0 45px #c0d6e4; }
-}
-
-/* The final destination at the bottom */
-#final-destination {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(to top, #2c3e50, #1a222e); /* A slightly different gradient for the end */
 }

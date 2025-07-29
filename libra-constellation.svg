@@ -1,0 +1,26 @@
+<svg class="constellation-svg" viewBox="250 50 400 450" xmlns="http://www.w3.org/2000/svg">
+  <title>Libra Constellation</title>
+  <g>
+    <title>Layer 1</title>
+
+    <!-- The Constellation Lines -->
+    <line class="constellation-line" id="svg_15" y2="149" x2="484" y1="123" x1="393" stroke="#000" fill="none"/>
+    <line class="constellation-line" stroke="#000" id="svg_16" y2="268" x2="526" y1="151" x1="493" fill="none"/>
+    <line class="constellation-line" id="svg_19" y2="276" x2="524" y1="345" x1="457" stroke="#000" fill="none"/>
+    <line class="constellation-line" id="svg_20" y2="360" x2="460" y1="406" x1="481" stroke="#000" fill="none"/>
+    <line class="constellation-line" id="svg_21" y2="215" x2="379" y1="132" x1="384" stroke="#000" fill="none"/>
+    <line class="constellation-line" id="svg_22" y2="270" x2="366" y1="299" x1="332" stroke="#000" fill="none"/>
+    <line class="constellation-line" stroke="#000" id="svg_23" y2="263" x2="370" y1="221" x1="379" fill="none"/>
+    <line class="constellation-line" id="svg_55" y2="271" x2="522" y1="134" x1="390" stroke="#000" fill="none"/>
+
+    <!-- The Interactive Stars -->
+    <path class="constellation-star" data-video-src="path/to/video-1.mp4" id="svg_1" d="m374.125,123.71463l7.63938,0l2.36063,-7.25737l2.36063,7.25737l7.63938,0l-6.18038,4.48525l2.36075,7.25737l-6.18038,-4.48537l-6.18038,4.48537l2.36075,-7.25737l-6.18038,-4.48525z" stroke="#000" fill="#fff"/>
+    <path class="constellation-star" data-video-src="path/to/video-2.mp4" id="svg_31" d="m368.125,215.71463l7.63938,0l2.36062,-7.25738l2.36063,7.25738l7.63938,0l-6.18038,4.48525l2.36075,7.25737l-6.18038,-4.48537l-6.18037,4.48537l2.36075,-7.25737l-6.18038,-4.48525z" stroke="#000" fill="#fff"/>
+    <path class="constellation-star" data-video-src="path/to/video-3.mp4" id="svg_36" d="m359.125,262.71463l7.63938,0l2.36062,-7.25738l2.36063,7.25738l7.63938,0l-6.18038,4.48525l2.36075,7.25737l-6.18038,-4.48537l-6.18037,4.48537l2.36075,-7.25737l-6.18038,-4.48525z" stroke="#000" fill="#fff"/>
+    <path class="constellation-star" data-video-src="path/to/video-4.mp4" id="svg_37" d="m318.125,299.71463l7.63938,0l2.36062,-7.25738l2.36063,7.25738l7.63938,0l-6.18038,4.48525l2.36075,7.25737l-6.18038,-4.48537l-6.18037,4.48537l2.36075,-7.25737l-6.18038,-4.48525z" stroke="#000" fill="#fff"/>
+    <path class="constellation-star" data-video-src="path/to/video-5.mp4" id="svg_40" d="m480.125,146.71463l7.63938,0l2.36062,-7.25738l2.36063,7.25738l7.63938,0l-6.18038,4.48525l2.36075,7.25737l-6.18038,-4.48537l-6.18037,4.48537l2.36075,-7.25737l-6.18038,-4.48525z" stroke="#000" fill="#fff"/>
+    <path class="constellation-star" data-video-src="path/to/video-6.mp4" id="svg_43" d="m518.125,269.71463l7.63938,0l2.36062,-7.25738l2.36063,7.25738l7.63938,0l-6.18038,4.48525l2.36075,7.25737l-6.18038,-4.48537l-6.18037,4.48537l2.36075,-7.25737l-6.18038,-4.48525z" stroke="#000" fill="#fff"/>
+    <path class="constellation-star" data-video-src="path/to/video-7.mp4" id="svg_49" d="m446.125,350.71463l7.63938,0l2.36062,-7.25738l2.36063,7.25738l7.63938,0l-6.18038,4.48525l2.36075,7.25737l-6.18038,-4.48537l-6.18037,4.48537l2.36075,-7.25737l-6.18038,-4.48525z" stroke="#000" fill="#fff"/>
+    <path class="constellation-star" data-video-src="path/to/video-8.mp4" id="svg_54" d="m472.125,409.71463l7.63938,0l2.36062,-7.25738l2.36063,7.25738l7.63938,0l-6.18038,4.48525l2.36075,7.25737l-6.18038,-4.48537l-6.18037,4.48537l2.36075,-7.25737l-6.18038,-4.48525z" stroke="#000" fill="#fff"/>
+  </g>
+</svg>
