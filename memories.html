@@ -56,31 +56,37 @@
 
   <button id="new-quote-btn">Натисни тук за друг цитат</button>
   
-  
-  <section id="constellation-section">
-    <div class="starry-background">
-        <div id="stars-container"></div>
+<!-- THE FINAL JOURNEY SECTION -->
+<section id="constellation-journey">
+
+    <!-- This div will hold the darkening sky and the random stars -->
+    <div class="sky-background">
+        <div id="journey-stars-container"></div>
     </div>
 
-    <!-- This empty div creates the long, clear-sky scroll -->
-    <div class="scroll-spacer"></div>
+    <!-- This empty div creates the long scroll through the clear sky -->
+    <div class="scroll-entry-spacer"></div>
 
-    <div class="constellation-wrapper">
-        <div class="constellation-title-container">
-            <h2 class="section-title">Our Constellation</h2>
-            <p class="section-subtitle">The stars have stories to tell. Click on them.</p>
+    <!-- This wrapper holds all the content that appears during the scroll -->
+    <div class="journey-content-wrapper">
+
+        <!-- 1. The Animated Intro Text -->
+        <div class="intro-text-container">
+            <p>Ноо приключението ни все още не е приключило нали...</p>
+            <p>Всичко е изписано в звездите.</p>
+            <p>п.с. нека най-долната бъде последна!</p>
         </div>
         
+        <!-- This is another spacer to separate the text from the constellation -->
+        <div class="scroll-spacer-small"></div>
+
+        <!-- 2. The Interactive Constellation -->
         <div id="constellation-holder">
-            <!-- SVG will be loaded here by JavaScript -->
+            <!-- Your libra-constellation.svg will be loaded here by JavaScript -->
         </div>
 
-        <div class="final-message-container">
-            <!-- ... your final message ... -->
-        </div>
     </div>
 </section>
-
 
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script> 
 

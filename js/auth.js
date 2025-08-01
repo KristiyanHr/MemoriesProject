@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const yourPassword = "nostalgia"; 
+  const yourPassword = "iamstilllovingyou"; 
 
   const passwordForm = document.getElementById("password-form");
 

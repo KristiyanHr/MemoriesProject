@@ -648,107 +648,121 @@ body {
 }
 /*Outro section*/
 
-/* --- FINAL, CLEANED-UP CONSTELLATION STYLES --- */
-
-/* This is your empty div for creating the long scroll */
-.stairway-entry {
-    height: 50vh; 
-}
-
-/* The wrapper for all the content */
-.constellation-wrapper {
+#constellation-journey {
     position: relative;
-    z-index: 2; /* Ensures it sits on top of the .starry-background */
+    min-height: 250vh; 
+    background: linear-gradient(to bottom, #1a222e, #2c3e50);
+    overflow-x: hidden; 
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.sky-background {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1; /* Sits behind the content */
+}
+
+/* The container for our random stars */
+#journey-stars-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%;
+}
+
+/* The individual star created by JavaScript */
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    animation: twinkle 5s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.4; transform: scale(0.7); }
+    50% { opacity: 1; transform: scale(1); }
+}
+
+/* This is the empty space you scroll through first */
+.scroll-entry-spacer {
+    height: 100vh; /* One full screen of empty scrolling */
+}
+
+/* This is the wrapper for all the content */
+.journey-content-wrapper {
+    position: relative;
+    z-index: 2; /* Sits ON TOP of the sticky background */
+    padding: 0 2rem;
     text-align: center;
-    color: white;
 }
 
-/* The container for the text that will animate */
-.constellation-title-container {
+/* The container for the animated text */
+.intro-text-container {
+    color: rgba(255, 255, 255, 0.9);
+    font-family: var(--caption-font);
+    font-size: 2rem;
+    line-height: 1.5;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    padding: 10vh 0;
+    
+    /* Start hidden and moved down */
     opacity: 0;
-    transform: translateX(-100px); /* Start off-screen to the left */
-    transition: opacity 1.2s ease-out, transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+    transform: translateY(50px);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
 }
 
-/* The class added by JavaScript to trigger the animation */
-.constellation-title-container.is-visible {
-    opacity: 1;
-    transform: translateX(0);
+/* A smaller spacer between the text and the constellation */
+.scroll-spacer-small {
+    height: 30vh;
 }
 
-/* The holder for your SVG */
+/* The container for your SVG */
 #constellation-holder {
     max-width: 500px;
-    margin: 2rem auto 4rem auto;
+    margin: 0 auto;
+    padding-bottom: 20vh;
+
+    /* Start hidden and fade in when visible */
+    opacity: 0;
+    transition: opacity 1.5s ease-in 0.5s; /* Add a slight delay */
 }
 
-/* The SVG element itself */
+/* This class is added by JavaScript to trigger the animations */
+.intro-text-container.is-visible,
+#constellation-holder.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* --- Styles for your SVG (lines and stars) --- */
 .constellation-svg {
     width: 100%;
     height: auto;
     filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
 }
-
-/* The connecting lines in the SVG */
 .constellation-line {
-    stroke: rgba(255, 229, 180, 0.4); /* Faint gold color */
+    stroke: rgba(255, 229, 180, 0.4);
     stroke-width: 2;
 }
-
-/* The one, true style for your clickable stars in the SVG */
 .constellation-star {
-    fill: rgba(255, 229, 180, 0.9); /* Brighter gold color */
+    fill: rgba(255, 229, 180, 0.9);
     stroke: white;
     stroke-width: 1;
-    transition: fill 0.3s ease;
+    transition: all 0.3s ease;
     cursor: pointer;
-    
-    /* The glowing animation */
     animation: star-pulse 4s infinite ease-in-out;
 }
-
 .constellation-star:hover {
-    fill: white; /* Brightens to pure white on hover */
+    fill: white;
     animation-play-state: paused;
 }
-
-/* The keyframes for the star's glowing pulse */
 @keyframes star-pulse {
     0%, 100% { filter: drop-shadow(0 0 4px white); }
     50% { filter: drop-shadow(0 0 12px white); }
-}
-
-/* --- THE STARRY BACKGROUND STYLES --- */
-
-.starry-background {
-    position: absolute; /* This makes it a background layer */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1; /* Sits behind the main content */
-    overflow: hidden; /* Ensures stars don't spill out */
-}
-
-/* This is the individual star element we create with JavaScript */
-.star {
-    position: absolute;
-    background-color: white;
-    border-radius: 50%;
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
-    
-    /* The twinkling animation */
-    animation: twinkle 5s infinite;
-}
-
-/* The keyframes for the twinkling effect */
-@keyframes twinkle {
-    0%, 100% {
-        opacity: 0.5;
-        transform: scale(0.8);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1);
-    }
 }
